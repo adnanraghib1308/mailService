@@ -1,0 +1,32 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.11'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.scaler'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'javax.activation:activation:1.1.1'
+	implementation 'javax.mail:javax.mail-api:1.6.2'
+	implementation 'com.sun.mail:javax.mail:1.6.2'
+	implementation 'org.json:json:20171018'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.13.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
