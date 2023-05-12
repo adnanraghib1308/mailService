@@ -31,6 +31,7 @@ public class MailService {
       helper.setTo(mail.getToMail());
       helper.setSubject(mail.getMailSubject());
       helper.setText(mail.getMailBody());
+      helper.setFrom("Biobazaar Healthcare Pvt Ltd" + "<lakshmansainls123@gmail.com>");
 
       for (Attachment attachment : attachments) {
         // Process the element
