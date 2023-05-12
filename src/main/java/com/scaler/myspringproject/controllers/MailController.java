@@ -68,8 +68,10 @@ public class MailController {
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();
 			mail = objectMapper.readValue(mailString, Mail.class);
-			CsvList csvList = objectMapper.readValue(csvString, CsvList.class);
-			csvs = csvList.csvList;
+			if(csvString != null){
+				CsvList csvList = objectMapper.readValue(csvString, CsvList.class);
+				csvs = csvList.csvList;
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
